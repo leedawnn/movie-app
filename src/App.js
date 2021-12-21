@@ -24,6 +24,7 @@ function App() {
         <div>
           {movies.map(movie => (
             <Movie
+              key={movie.id}
               title={movie.title_long}
               genres={movie.genres}
               rating={movie.rating}
