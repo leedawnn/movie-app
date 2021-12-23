@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-function Movie({ title, genres, rating, runtime, coverImg, summary }) {
+function Movie({ id, title, genres, rating, runtime, coverImg, summary }) {
   return (
     <div>
-      <Link to='/movie'>{title}</Link>
+      <Link to={`/movie/${id}`}>{title}</Link>
       <ul>
         {genres.map(g => (
           <li key={g}>{g}</li>
@@ -21,6 +21,7 @@ function Movie({ title, genres, rating, runtime, coverImg, summary }) {
 }
 
 Movie.propTypes = {
+  id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   genres: PropTypes.arrayOf(PropTypes.string).isRequired,
   rating: PropTypes.number.isRequired,

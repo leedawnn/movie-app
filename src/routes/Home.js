@@ -25,6 +25,7 @@ function Home() {
           {movies.map(movie => (
             <Movie
               key={movie.id}
+              id={movie.id}
               title={movie.title_long}
               genres={movie.genres}
               rating={movie.rating}
